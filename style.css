@@ -1,0 +1,19 @@
+.topright {
+
+    background-color: black;
+    border:  dotted whitesmoke;
+    border-color: white;
+    position: sticky;
+    float: left;color: whitesmoke;
+}
+
+h1, p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
