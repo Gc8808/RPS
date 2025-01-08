@@ -5,6 +5,7 @@
     border-color: white;
     position: sticky;
     float: left;color: whitesmoke;
+    position: sticky;
 }
 
 h1, p {
@@ -14,6 +15,41 @@ h1, p {
 }
 
 .center {
+    max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
+
 }
+
+.pz {
+
+    padding-top: 300px;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    color: whitesmoke;
+}
+
+.PZA {
+
+   padding-left: 20px;
+   padding-right: 20px;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    color: whitesmoke;
+    size: 150px;
+}
+
+body {
+    background-image: url('Rock-paper-scissors.svg.png');
+    background-repeat: no-repeat;
+    background-position: top;
+
+}
+
+nav {
+    background-color: black;
+    color: whitesmoke;
+}
+
