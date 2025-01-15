@@ -4,10 +4,10 @@ let responceImg = document.getElementById('response-img');
 let responceText = document.getElementById('responce-Text');
 let greeting = document.getElementById('greeting');
 
-// Set the user name on the webpage
+
 userName ? document.getElementById('userName').innerText = `${userName}:` : document.getElementById('userName').innerText = 'Imagine not typing your name';
 
-// Function to capture the user's choice
+//  capture the user's choice
 const getUserChoice = (userInput) => {
   userInput = userInput.toLowerCase();
   if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
@@ -18,13 +18,14 @@ const getUserChoice = (userInput) => {
   }
 };
 
-// Function to get a random choice for the computer
+//  get a random choice for the computer
 const getComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * 3);  // Random number between 0 and 2
   return randomNumber === 0 ? 'rock' : randomNumber === 1 ? 'paper' : 'scissors';
+  
 };
 
-// Function to determine the winner of the game
+//  determine the winner of the game
 const determineWinner = (userChoice, computerChoice) => {
   if (userChoice === computerChoice) {
     return "It's a tie!";
@@ -51,7 +52,7 @@ function playGame(userChoice) {
   const computerChoice = getComputerChoice();
   console.log(`User chose: ${userChoiceValid}`);
   console.log(`Computer chose: ${computerChoice}`);
-
+  document.getElementById("choose").innerText = ` ${computerChoice}`;
   const result = determineWinner(userChoiceValid, computerChoice);
   console.log(result);
 
@@ -60,15 +61,11 @@ function playGame(userChoice) {
 
   // Show the images (you can customize this as per your needs)
   if (result.includes("win")) {
-    responceImg.src = 'path_to_win_image.png'; // replace with actual image path
+    responceImg.src = 'path_to_win_image.png';
   } else if (result === "It's a tie!") {
-    responceImg.src = 'path_to_tie_image.png'; // replace with actual image path
+    responceImg.src = 'path_to_tie_image.png'; 
   } else {
-    responceImg.src = 'path_to_lose_image.png'; // replace with actual image path
+    responceImg.src = 'path_to_lose_image.png'; 
   }
 }
 
-// Event listeners for buttons (assuming you have buttons for rock, paper, and scissors in the HTML)
-document.getElementById('rock').addEventListener('click', () => playGame('rock'));
-document.getElementById('paper').addEventListener('click', () => playGame('paper'));
-document.getElementById('scissors').addEventListener('click', () => playGame('scissors'));
