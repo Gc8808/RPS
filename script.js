@@ -3,20 +3,12 @@ let userName = prompt('What is your Name?');
 let responceImg = document.getElementById('response-img');
 let responceText = document.getElementById('responce-Text');
 let greeting = document.getElementById('greeting');
+let userScore = 0
+let botScore = 0
 
 
 userName ? document.getElementById('userName').innerText = `${userName}:` : document.getElementById('userName').innerText = 'Imagine not typing your name';
 
-//  capture the user's choice
-const getUserChoice = (userInput) => {
-  userInput = userInput.toLowerCase();
-  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
-    return userInput;
-  } else {
-    console.log("Error! Invalid input. Please choose 'rock', 'paper', or 'scissors'.");
-    return null;
-  }
-};
 
 //  get a random choice for the computer
 const getComputerChoice = () => {
@@ -30,42 +22,52 @@ const determineWinner = (userChoice, computerChoice) => {
   if (userChoice === computerChoice) {
     return "It's a tie!";
   }
-
+  userScore++
+  console.log(userScore)
+  document.getElementById('userScore').innerText = userScore
   if (userChoice === 'rock') {
+    
     return computerChoice === 'paper' ? "Computer wins!" : "You win!";
   }
-
+  
   if (userChoice === 'paper') {
     return computerChoice === 'scissors' ? "Computer wins!" : "You win!";
   }
-
+ 
   if (userChoice === 'scissors') {
     return computerChoice === 'rock' ? "Computer wins!" : "You win!";
   }
 };
 
-// Function to update the page with the game result
+// the game result
 function playGame(userChoice) {
-  const userChoiceValid = getUserChoice(userChoice);
-  if (!userChoiceValid) return;
+
 
   const computerChoice = getComputerChoice();
-  console.log(`User chose: ${userChoiceValid}`);
+  console.log(`User chose: ${userChoice}`);
   console.log(`Computer chose: ${computerChoice}`);
   document.getElementById("choose").innerText = ` ${computerChoice}`;
-  const result = determineWinner(userChoiceValid, computerChoice);
+  const result = determineWinner(userChoice, computerChoice);
   console.log(result);
 
   // Update the page with the result
   responceText.innerText = result;
 
-  // Show the images (you can customize this as per your needs)
-  if (result.includes("win")) {
-    responceImg.src = 'path_to_win_image.png';
-  } else if (result === "It's a tie!") {
-    responceImg.src = 'path_to_tie_image.png'; 
-  } else {
-    responceImg.src = 'path_to_lose_image.png'; 
+  if (result === 'Computer wins!') {
+    botScore++
+    console.log(botScore)
+    document.getElementById('botScore').innerText = botScore
   }
+}
+if (userScore === 3) {
+  alert("You win!");
+   userScore = 0 
+   botScore = 0 
+}
+
+if (botScore === 3) {
+  alert("Aditya wins!");
+   userScore = 0 
+   botScore = 0 
 }
 
