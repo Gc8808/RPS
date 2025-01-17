@@ -39,12 +39,28 @@ h1, p {
     margin-right: auto;
     color: whitesmoke;
     size: 150px;
+    border:  dotted whitesmoke;
+   
 }
 
+.PZA1 {
+
+    padding-left: 20px;
+    padding-right: 20px;
+     max-width: fit-content;
+     margin-left: auto;
+     margin-right: auto;
+     color: whitesmoke;
+     size: 150px;
+     border:  dotted whitesmoke;
+    
+ }
+
 body {
-    background-image: url('Rock-paper-scissors.svg.png');
+    background-image: url('images.jpg');
     background-repeat: no-repeat;
     background-position: top;
+    background-size:cover;
 
 }
 
@@ -56,4 +72,22 @@ nav {
 
 .mid {
     background-color: black;
+    border:  dotted whitesmoke;
+
+}
+.buttons {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background-size: 120% auto;
+    background-image: linear-gradient(315deg, #7b4397 0%, #dc2430 75%);
 }

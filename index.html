@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Rps</title>
+        <title>Rock Paper sicssors</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -32,6 +32,7 @@
 <p id="userScore"></p>
 <p>Opponent:</p> <p id="botScore"></p>
 
+
 </div>
          <!--Play area -->
          <div class="pz">
@@ -41,9 +42,10 @@
             <div>
                 <p id="userName"></p>
               
-                <button id="rock" onclick="playGame('rock')">Rock</button>
-                <button id="paper" onclick="playGame('paper')">Paper</button>
-                <button id="scissors" onclick="playGame('scissors')">Scissors</button>
+                <button id="rock" class="buttons" onclick="playGame('rock') " onclick="roundsPlayed()">Rock</button>
+                <button id="paper"  class="buttons" onclick="playGame('paper')" onclick="roundsPlayed()" >Paper</button>
+                <button id="scissors"  class="buttons" onclick="playGame('scissors')" onclick="roundsPlayed()">Scissors</button>
+                <button id="reset"  class="buttons" onclick="resetGame()" >Reset</button>
                 <div id="response-img-container">
                 
                 </div>
@@ -52,7 +54,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 p-2 mid"><h2>Winner:</h2>  <p id="responce-Text"></p> 
             </p></div>
-            <div class="col-lg-4 col-md-4 col-sm-12 p-2 bg-dark PZA "><h2>Aditya</h2> <p>Chose:</p><p id="choose" class="PZA"></p></div>
+            <div class="col-lg-4 col-md-4 col-sm-12 p-2 bg-dark PZA1 "><h2>Aditya</h2> <p>Chose:</p><p id="choose" class="PZA"></p></div>
             </div>
         </div>
     </div>
